@@ -1,59 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <title>CAD.js Viewer</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" href="stylesheets/jquery-ui.min.css">
-    <link rel="stylesheet" href="stylesheets/default.css">
-    <link rel="stylesheet" href="stylesheets/visualize.css">
-    <link rel="stylesheet" href="stylesheets/jstree/themes/vulcan/style.css">
-    <link rel="stylesheet" href="stylesheets/stepview.css">
-    <link rel="stylesheet" href="stylesheets/compass.css">
-</head>
-<body class="non-initialized">
-<div class="steptools-content-container">
-    <div class="steptools-view" id="steptools-view"></div>
-    <div class="info-panel" id="info-panel">
-        <div class="steptools-compass" id="steptools-compass"></div>
-        <div class="key-hints" id="key-hints">
-            <h2>Controls</h2>
-            <p><span class="key-label">z</span> zoom to fit</p>
-            <p><span class="key-label">j</span> toggle visible</p>
-            <p><span class="key-label">o</span> toggle transparent</p>
-            <p><span class="key-label">x</span> explode</p>
-            <p><span class="key-label">s</span> unexplode</p>
-        </div>
-    </div>
-    <div class="steptools-tree" id="steptools-tree"></div>
-    <div class="steptools-downloads" id="steptools-downloads">
-        <div>
-            <h3>Downloads
-                <span class="steptools-downloads-count"></span>
-            </h3>
-        </div>
-        <ul></ul>
-    </div>
-    <div id="dialog">
-        <p id="dialog-content">
-    </div>
-    <div id="resizer">
-        <svg class="expander" title="Expand to full screen" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-             width="19.834px" height="14px" viewBox="0 0 19.834 14" enable-background="new 0 0 19.834 14" xml:space="preserve">
-            <polygon fill="#231F20" points="2,4 2,2 5,2 5,0 0,0 0,4 		"/>
-            <polygon fill="#231F20" points="2,10 0,10 0,14 5,14 5,12 2,12 		"/>
-            <polygon fill="#231F20" points="17.834,10 17.834,12 14.834,12 14.834,14 19.834,14 19.834,10 		"/>
-            <polygon fill="#231F20" points="17.834,4 19.834,4 19.834,0 14.834,0 14.834,2 17.834,2 		"/>
-        </svg>
-        <svg class="minimizer" title="Minimize view" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-            width="19.834px" height="14px" viewBox="0 0 19.834 14" enable-background="new 0 0 19.834 14" xml:space="preserve">
-            <polygon fill="#231F20" points="13.5,13 13.5,11 16.5,11 16.5,9 11.5,9 11.5,13 "/>
-            <polygon fill="#231F20" points="13.5,2 11.5,2 11.5,6 16.5,6 16.5,4 13.5,4 "/>
-            <polygon fill="#231F20" points="6,2 6,4 3,4 3,6 8,6 8,2 "/>
-            <polygon fill="#231F20" points="6,13 8,13 8,9 3,9 3,11 6,11 "/>
-        </svg>
-    </div>
-</div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Neo-lifecycle by stiggsa</title>
 
-<script data-main="javascript/build" src="javascript/libs/require.min.js"></script>
-</body>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Neo-lifecycle</h1>
+        <p>PLM Module for neonetic</p>
+
+        <p class="view"><a href="https://github.com/stiggsa/Neo-lifecycle">View the Project on GitHub <small>stiggsa/Neo-lifecycle</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/stiggsa/Neo-lifecycle/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/stiggsa/Neo-lifecycle/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/stiggsa/Neo-lifecycle">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="cadjs" class="anchor" href="#cadjs"><span class="octicon octicon-link"></span></a>cad.js</h1>
+
+<p>Web-based CAD file viewer</p>
+
+<p>clone
+// In root directory</p>
+
+<p>mkdir data</p>
+
+<p>// -&gt; Move models into data directory</p>
+
+<p>npm install</p>
+
+<p>node app.js</p>
+
+<p>// To build using Gulp</p>
+
+<p>gulp</p>
+
+<p>// Edit public/viewer.html and set</p>
+
+<div class="highlight highlight-javascript"><pre><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">data</span><span class="o">-</span><span class="nx">main</span><span class="o">=</span><span class="s2">"javascript/main"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"javascript/libs/require.min.js"</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</pre></div>
+
+<p>// to</p>
+
+<div class="highlight highlight-javascript"><pre><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">data</span><span class="o">-</span><span class="nx">main</span><span class="o">=</span><span class="s2">"javascript/build"</span> <span class="nx">src</span><span class="o">=</span><span class="s2">"javascript/libs/require.min.js"</span><span class="o">&gt;&lt;</span><span class="err">/script&gt;</span>
+</pre></div>
+
+<h1>
+<a name="snazzy-demos" class="anchor" href="#snazzy-demos"><span class="octicon octicon-link"></span></a>Snazzy Demos</h1>
+
+<p><a href="http://ghemingway.github.io/cad.js/?resource_url=/cad.js/data/cutter/index.json">http://ghemingway.github.io/cad.js/?resource_url=/cad.js/data/cutter/index.json</a></p>
+
+<p><a href="http://ghemingway.github.io/cad.js/?resource_url=/cad.js/data/rear/index.json">http://ghemingway.github.io/cad.js/?resource_url=/cad.js/data/rear/index.json</a></p>
+
+<p><a href="http://ghemingway.github.io/cad.js/?resource_url=/cad.js/data/rccar/index.json">http://ghemingway.github.io/cad.js/?resource_url=/cad.js/data/rccar/index.json</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/stiggsa">stiggsa</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
 </html>
